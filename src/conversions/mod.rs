@@ -9,3 +9,4 @@ pub mod num_bigint;
 pub mod num_complex;
 pub mod serde;
 mod std;
+pub mod tinyvec;

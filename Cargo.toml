@@ -39,6 +39,9 @@ indexmap = { version = "1.6", optional = true }
 num-bigint = { version = "0.4", optional = true }
 num-complex = { version = ">= 0.2, < 0.5", optional = true }
 serde = { version = "1.0", optional = true }
+# Switch git dependency for crates.io once a new release is out.
+# tinyvec = { version = "1.0", optional = true, features = ["alloc"] }
+tinyvec = { git = "https://github.com/Lokathor/tinyvec", optional = true, features = ["alloc"] }
 
 [dev-dependencies]
 assert_approx_eq = "1.1.0"
@@ -110,6 +113,7 @@ full = [
     "eyre",
     "anyhow",
     "experimental-inspect",
+    "tinyvec",
 ]
 
 [[bench]]
@@ -173,5 +177,5 @@ members = [
 
 [package.metadata.docs.rs]
 no-default-features = true
-features = ["macros", "num-bigint", "num-complex", "hashbrown", "serde", "multiple-pymethods", "indexmap", "eyre", "chrono"]
+features = ["macros", "num-bigint", "num-complex", "hashbrown", "serde", "multiple-pymethods", "indexmap", "eyre", "chrono", "tinyvec"]
 rustdoc-args = ["--cfg", "docsrs"]
